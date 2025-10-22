@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Name — Personal Website</title>
+    <meta name="description" content="Personal homepage for Your Name. About, projects and contact." />
+    <style>
+        :root{
+            --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#7c3aed; --text:#e6eef8;
+            --radius:12px;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0; background:linear-gradient(180deg,#071025 0%, var(--bg) 100%);
+            color:var(--text); line-height:1.45; -webkit-font-smoothing:antialiased;
+            padding:28px;
+        }
+        .container{max-width:980px; margin:0 auto;}
+        header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+        .brand{display:flex;align-items:center;gap:12px}
+        .logo{
+            width:56px;height:56px;border-radius:12px;display:grid;place-items:center;
+            background:linear-gradient(135deg,var(--accent),#3b82f6);font-weight:700;color:white;
+            font-size:20px;flex:0 0 56px;
+        }
+        nav{display:flex;gap:12px;align-items:center}
+        nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
+        nav a:hover{background:rgba(255,255,255,0.03);color:var(--text)}
+        .hero{
+            background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+            border-radius:var(--radius); padding:28px; display:grid; gap:16px;
+            grid-template-columns: 1fr auto; align-items:center; margin-bottom:20px;
+            box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+        }
+        .hero h1{margin:0;font-size:28px}
+        .role{color:var(--muted);margin:0 0 8px 0}
+        .cta{display:inline-block;background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none}
+        main{display:grid;grid-template-columns:1fr 320px;gap:20px;}
+        .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px}
+        .projects{display:grid;gap:12px}
+        .proj{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
+        .proj h3{margin:0;font-size:16px}
+        .muted{color:var(--muted);font-size:14px}
+        .contact input,.contact textarea{width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+        footer{margin-top:24px;color:var(--muted);font-size:13px}
+        @media (max-width:880px){
+            main{grid-template-columns:1fr}
+            .hero{grid-template-columns:1fr}
+            .logo{width:48px;height:48px}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="logo">YN</div>
+                <div>
+                    <div style="font-weight:700">Your Name</div>
+                    <div class="muted" style="font-size:13px">Software developer · Designer · Open source</div>
+                </div>
+            </div>
+            <nav aria-label="Main">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section class="hero card" aria-labelledby="hero-title">
+            <div>
+                <p class="role">Hi — I'm a full‑stack developer focused on clean, maintainable web apps.</p>
+                <h1 id="hero-title">I build reliable software that helps teams move faster.</h1>
+                <p class="muted" style="margin-top:8px">I specialize in JavaScript, TypeScript, and modern web tooling. Based in Your City.</p>
+                <div style="margin-top:12px">
+                    <a class="cta" href="#contact">Get in touch</a>
+                    <a class="muted" href="/resume.pdf" style="margin-left:12px;text-decoration:none">Resume</a>
+                </div>
+            </div>
+            <div style="text-align:right">
+                <div class="card" style="border-radius:10px;max-width:260px">
+                    <div style="font-weight:700">Skills</div>
+                    <div class="muted" style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px">
+                        <span style="background:#071424;padding:6px 8px;border-radius:8px">JavaScript</span>
+                        <span style="background:#071424;padding:6px 8px;border-radius:8px">React</span>
+                        <span style="background:#071424;padding:6px 8px;border-radius:8px">Node</span>
+                        <span style="background:#071424;padding:6px 8px;border-radius:8px">TypeScript</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <main>
+            <section>
+                <div id="about" class="card" style="margin-bottom:16px">
+                    <h2 style="margin-top:0">About</h2>
+                    <p class="muted">I design and build web applications with an emphasis on simplicity, performance, and developer experience. I enjoy collaborating on open source and learning new techniques for scaling products.</p>
+                </div>
+
+                <div id="projects" class="card">
+                    <h2 style="margin-top:0">Projects</h2>
+                    <div class="projects" style="margin-top:12px">
+                        <div class="proj">
+                            <h3>Project One</h3>
+                            <div class="muted">A short description of a noteworthy project. Tech used: React, Node.</div>
+                            <div style="margin-top:6px"><a href="#" style="color:var(--accent);text-decoration:none">View →</a></div>
+                        </div>
+
+                        <div class="proj">
+                            <h3>Project Two</h3>
+                            <div class="muted">Small utility or library with practical usage and tests.</div>
+                            <div style="margin-top:6px"><a href="#" style="color:var(--accent);text-decoration:none">View →</a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <aside>
+                <div class="card contact" id="contact">
+                    <h3 style="margin-top:0">Contact</h3>
+                    <p class="muted">Send a message or find me on social platforms.</p>
+                    <form action="#" method="post" onsubmit="alert('This demo form is not wired up.'); return false;">
+                        <label class="muted">Name
+                            <input type="text" name="name" placeholder="Your name" required />
+                        </label>
+                        <label class="muted">Email
+                            <input type="email" name="email" placeholder="you@example.com" required />
+                        </label>
+                        <label class="muted">Message
+                            <textarea name="message" rows="4" placeholder="Hi — I'd like to talk..." required></textarea>
+                        </label>
+                        <div style="margin-top:10px">
+                            <button type="submit" style="background:var(--accent);color:white;padding:10px 12px;border:none;border-radius:8px;cursor:pointer">Send</button>
+                        </div>
+                    </form>
+                    <div style="margin-top:16px" class="muted">
+                        <div>Social</div>
+                        <div style="margin-top:8px;display:flex;gap:8px">
+                            <a href="#" style="color:var(--muted);text-decoration:none">GitHub</a>
+                            <a href="#" style="color:var(--muted);text-decoration:none">LinkedIn</a>
+                            <a href="#" style="color:var(--muted);text-decoration:none">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:12px">
+                    <div class="muted">Availability</div>
+                    <div style="font-weight:700;margin-top:6px">Open to freelance and full‑time roles</div>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+                <div class="muted">© Your Name — Built with HTML & CSS</div>
+                <div class="muted">Last updated: <time datetime="2025-01-01">2025</time></div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
